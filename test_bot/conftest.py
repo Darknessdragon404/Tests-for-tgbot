@@ -9,7 +9,7 @@ api_hash = os.environ["c7db1ff433f4d083f69f808e11a98bbd"]
 session_str = os.environ["6278975621:AAGOEe_-MoGxGZgvE26ywIFOReSTxD1Q8K8/test"]
 
 
-@pytest.fixture(scope="session")
+@pytest_asyncio.fixture(scope="session")
 async def client() -> TelegramClient:
     client = TelegramClient(
         StringSession(session_str), api_id, api_hash,
